@@ -1,13 +1,16 @@
-import { loadEnvConfig } from '@next/env'
+const { loadEnvConfig } = require('@next/env')
+// loadEnvConfig(process.env.PWD || process.cwd())
+loadEnvConfig(".")
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default async () => {
-  const projectDir = process.cwd()
-  loadEnvConfig(projectDir)
-}
+// export default async () => {
+//   const projectDir = process.cwd()
+//   loadEnvConfig(projectDir)
+// }
 
 // Next.js can read env variables from .env file without dotenv or similar lib
 console.log('process.env.APP_HOME [nextjs_config] :>> ', process.env.APP_HOME);
+console.log('process.env.NEWLY_ADDED_ENV_VAR [nextjs_config] :>> ', process.env.NEWLY_ADDED_ENV_VAR);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -22,4 +25,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+module.exports = { nextConfig,  }
