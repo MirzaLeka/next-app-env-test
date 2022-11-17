@@ -5,6 +5,10 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
   console.log('APP_HOME [home_page] :>> ', process.env.APP_HOME);
+  console.log('NEWLY_ADDED_ENV_VAR [home_page] :>> ', process.env.NEWLY_ADDED_ENV_VAR);
+  console.log('GLOBAL_ENV_VAR_OS [home_page] :>> ', process.env.GLOBAL_ENV_VAR_OS);
+  console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
+  console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
 
   return (
     <div className={styles.container}>
