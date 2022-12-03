@@ -9,9 +9,12 @@ const generatePDF = (
 
     htmlPDF.create(html, options).toBuffer((err, buffer) => {
       if (err) {
+        console.error('Unable to create PDF from HTML');
+        console.error(err);
         return reject(err)
       }
 
+      console.log('All good. Received buffer')
       return resolve(buffer)
     })
   })

@@ -11,9 +11,9 @@ export default function Home() {
   // console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
   // console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
 
-  const getPDF = () => {
+  const downloadPDF = (url) => {
     axios({
-      url: '/api/pdf',
+      url,
       method: 'GET',
       responseType: 'blob', // important
   }).then((response) => {
@@ -35,6 +35,16 @@ export default function Home() {
   });
   }
 
+  const getPDFOriginal = () => {
+    downloadPDF('/api/pdf');
+  }
+
+  const getPDFNew = () => {
+    downloadPDF('/api/pdf2');
+  }
+
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -54,7 +64,8 @@ export default function Home() {
 
       </main>
 
-      <button onClick={getPDF}>Get PDF file</button>
+      <button onClick={getPDFOriginal}>Get PDF file - Original</button>
+      <button onClick={getPDFNew}>Get PDF file - New</button>
 
       <footer className={styles.footer}>
         <a
