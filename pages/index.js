@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -5,10 +6,34 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
   console.log('APP_HOME [home_page] :>> ', process.env.APP_HOME);
-  console.log('NEWLY_ADDED_ENV_VAR [home_page] :>> ', process.env.NEWLY_ADDED_ENV_VAR);
-  console.log('GLOBAL_ENV_VAR_OS [home_page] :>> ', process.env.GLOBAL_ENV_VAR_OS);
-  console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
-  console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
+  // console.log('NEWLY_ADDED_ENV_VAR [home_page] :>> ', process.env.NEWLY_ADDED_ENV_VAR);
+  // console.log('GLOBAL_ENV_VAR_OS [home_page] :>> ', process.env.GLOBAL_ENV_VAR_OS);
+  // console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
+  // console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
+
+  const getPDF = () => {
+    axios({
+      url: '/api/pdf',
+      method: 'GET',
+      responseType: 'blob', // important
+  }).then((response) => {
+      // create file link in browser's memory
+
+      console.log('response.data :>> ', response.data);
+      const href = URL.createObjectURL(response.data);
+
+      // create "a" HTML element with href to file & click
+      const link = document.createElement('a');
+      link.href = href;
+      link.setAttribute('download', 'file.pdf'); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+
+      // clean up "a" element & remove ObjectURL
+      document.body.removeChild(link);
+      URL.revokeObjectURL(href);
+  });
+  }
 
   return (
     <div className={styles.container}>
@@ -28,6 +53,8 @@ export default function Home() {
         </p>
 
       </main>
+
+      <button onClick={getPDF}>Get PDF file</button>
 
       <footer className={styles.footer}>
         <a
