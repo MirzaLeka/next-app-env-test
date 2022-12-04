@@ -40,7 +40,8 @@ export default function Home() {
   }
 
   const getPDFNew = () => {
-    downloadPDF('/api/pdf2');
+    console.log('downloading pdf3')
+    downloadPDF('/api/pdf3');
   }
 
 

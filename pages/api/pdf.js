@@ -7,7 +7,7 @@ const generatePDF = (
   return new Promise((resolve, reject) => {
     const html = renderToStaticMarkup(component)
 
-    htmlPDF.create(html).toBuffer((err, buffer) => {
+    htmlPDF.create(html, options).toBuffer((err, buffer) => {
       if (err) {
         console.error('Unable to create PDF from HTML');
         console.error(err);
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     orientation: 'portrait',
     border: '10mm',
     type: 'pdf',
-    timeout: 100_000,
+    timeout: 100000,
   }
 
   const pageName = 123;
