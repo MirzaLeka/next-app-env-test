@@ -40,7 +40,7 @@ export default function Home() {
   }
 
   const getPDFNew = () => {
-    console.log('downloading pdf3')
+    console.log('downloading pdf3 with postinstall ;')
     downloadPDF('/api/pdf3');
   }
 
