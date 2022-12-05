@@ -44,6 +44,12 @@ export default function Home() {
     downloadPDF('/api/pdf3');
   }
 
+  const getPDFNewMonday = () => {
+    console.log('downloading pdf5 with Puppeteer')
+    downloadPDF('/api/pdf5');
+  }
+
+
 
 
   return (
@@ -67,6 +73,7 @@ export default function Home() {
 
       <button onClick={getPDFOriginal}>Get PDF file - Original</button>
       <button onClick={getPDFNew}>Get PDF file - New</button>
+      <button onClick={getPDFNewMonday}>Get PDF With Puppeteer</button>
 
       <footer className={styles.footer}>
         <a
@@ -74,7 +81,6 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>

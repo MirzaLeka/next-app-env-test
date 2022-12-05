@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "cd ./node_modules/puppeteer; npm run install",
     "dev": "next dev",
     "build": "next build",
     "build:prod": "cross-env NODE_ENV=production next build",
@@ -17,10 +16,12 @@
     "convert-to-pdf": "^2.3.1",
     "cross-env": "^7.0.3",
     "html-pdf": "^3.0.1",
+    "html-pdf-chrome": "^0.8.1",
     "html-pdf-node": "^1.0.8",
     "next": "13.0.3",
     "pdf-creator-node": "^2.3.5",
     "pdfkit": "^0.13.0",
+    "puppeteer": "^19.3.0",
     "react": "18.2.0",
     "react-dom": "^18.2.0"
   },
