@@ -49,7 +49,10 @@ export default function Home() {
     downloadPDF('/api/pdf5');
   }
 
-
+  const getPDFNewTuesday = () => {
+    console.log('downloading pdf6 with Puppeteer')
+    downloadPDF('/api/pdf6');
+  }
 
 
   return (
@@ -74,6 +77,7 @@ export default function Home() {
       <button onClick={getPDFOriginal}>Get PDF file - Original</button>
       <button onClick={getPDFNew}>Get PDF file - New</button>
       <button onClick={getPDFNewMonday}>Get PDF With Puppeteer</button>
+      <button onClick={getPDFNewTuesday}>Get PDF With PPT or PPT Core</button>
 
       <footer className={styles.footer}>
         <a
