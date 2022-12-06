@@ -2,6 +2,8 @@ import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import JsPDF from 'jspdf';
+
 
 export default function Home() {
 
@@ -10,6 +12,14 @@ export default function Home() {
   // console.log('GLOBAL_ENV_VAR_OS [home_page] :>> ', process.env.GLOBAL_ENV_VAR_OS);
   // console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
   console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
+
+  const generatePDF = () => {
+
+    const report = new JsPDF('portrait','pt','a4');
+    report.html('<div> <h1>Hello</h1> <p>World</p> </div>').then(() => {
+        report.save('report.pdf');
+    });
+  }
 
   const downloadPDF = (url) => {
     axios({
@@ -78,6 +88,7 @@ export default function Home() {
       <button onClick={getPDFNew}>Get PDF file - New</button>
       <button onClick={getPDFNewMonday}>Get PDF With Puppeteer</button> */}
       <button onClick={getPDFNewTuesday}>Get PDF With PPT or PPT Core</button>
+      <button onClick={generatePDF}>Generate PDF through React.js</button>
 
       <footer className={styles.footer}>
         <a
