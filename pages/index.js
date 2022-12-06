@@ -9,7 +9,7 @@ export default function Home() {
   // console.log('NEWLY_ADDED_ENV_VAR [home_page] :>> ', process.env.NEWLY_ADDED_ENV_VAR);
   // console.log('GLOBAL_ENV_VAR_OS [home_page] :>> ', process.env.GLOBAL_ENV_VAR_OS);
   // console.log('GLOBAL_ENV_VAR_PATH [home_page] :>> ', process.env.GLOBAL_ENV_VAR_PATH);
-  // console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
+  console.log('NODE_ENV [home_page] :>> ', process.env.NODE_ENV);
 
   const downloadPDF = (url) => {
     axios({
