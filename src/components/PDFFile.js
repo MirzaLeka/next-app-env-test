@@ -44,11 +44,11 @@ const PDFFile = () => {
     <Document>
       <Page style={styles.body}>
         <Text style={styles.header} fixed></Text>
-        <Image style={styles.image} src={mw2Img} />
+        <Image alt="img" style={styles.image} src={mw2Img} />
         <Text style={styles.text}>
           Oh right. I forgot about the battle. Wow, you got that off the
           Internet? In my day, the Internet was only used to download
-          pornography. I dont know what you did, Fry, but once again, you
+          photography XD. I dont know what you did, Fry, but once again, you
           screwed up! Now all the planets are gonna start cracking wise about
           our mamas. She also liked to shut up! Well go deliver this crate like
           professionals, and then well go home. In your time, yes, but nowadays
