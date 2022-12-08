@@ -12,9 +12,10 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "^14"
+    "node": "^16"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.0.1",
     "axios": "^1.2.0",
     "chrome-aws-lambda": "^6",
     "cross-env": "^7.0.3",
