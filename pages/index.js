@@ -77,7 +77,7 @@ export default function Home() {
 
       </main>
 
-      <NewHome></NewHome>
+      {/* <NewHome></NewHome> */}
 
       {/* <button onClick={getPDFOriginal}>Get PDF file - Original</button>
       <button onClick={getPDFNew}>Get PDF file - New</button>
