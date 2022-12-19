@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.0.1",
+    "@sentry/nextjs": "^7.27.0",
     "axios": "^1.2.0",
     "chrome-aws-lambda": "^6",
     "cross-env": "^7.0.3",
